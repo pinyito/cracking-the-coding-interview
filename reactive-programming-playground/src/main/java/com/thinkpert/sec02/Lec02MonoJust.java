@@ -10,6 +10,6 @@ public class Lec02MonoJust { // created a publisher with just the method of Mono
         var mono = Mono.just("Eria");
         var subscriber = new SubscriberImpl(); // instantiating subscriber
         mono.subscribe(subscriber); // subscribing to publisher
-        subscriber.getSubscription().request(10); // subscriber requesting data from a publisher
+        subscriber.getSubscription().request(10); // requesting data from a publisher
     }
 }
