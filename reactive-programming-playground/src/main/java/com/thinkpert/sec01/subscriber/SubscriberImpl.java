@@ -20,8 +20,8 @@ public class SubscriberImpl implements Subscriber<String> {
     }
 
     @Override
-    public void onNext(String email) {
-        log.info("Email received: {}", email);
+    public void onNext(String mono) {
+        log.info("Received: {}", mono);
     }
 
     @Override
