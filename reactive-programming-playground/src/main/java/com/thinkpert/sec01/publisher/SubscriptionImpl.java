@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 public class SubscriptionImpl implements Subscription {
 
     private static final Logger log = LoggerFactory.getLogger(SubscriptionImpl.class);
-    private static final int MAX_ITEMS = 10;
+    private static final int MAX_ITEMS = 0;
     private final Faker faker;
     private final Subscriber<? super String> subscriber;
     private boolean isCancelled;
