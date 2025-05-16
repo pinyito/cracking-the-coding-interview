@@ -26,6 +26,12 @@ public class SubscriptionImpl implements Subscription {
             return;
         }
         log.info("Subscriber has requested {} items", requested);
+        // simulate an error her to test the error signal reaction from producer
+        if(requested > MAX_ITEMS){
+            this.subscriber.onError(new RuntimeException("Too many items requested"));
+            this.isCancelled = true;
+            return;
+        }
         for(int i = 0; i < requested && count < MAX_ITEMS; i++){
             count++;
             this.subscriber.onNext(this.faker.internet().emailAddress());

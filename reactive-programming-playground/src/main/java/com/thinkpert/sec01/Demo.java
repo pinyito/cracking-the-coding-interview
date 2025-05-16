@@ -14,7 +14,9 @@ import com.thinkpert.sec01.subscriber.SubscriberImpl;
 public class Demo {
     public static void main(String[] args) throws InterruptedException {
 //        demo1(); // rule 1. validated
-        demo3(); // rule 2. validated
+//        demo2(); // rule 2. validated
+//        demo3(); // rule 3. validated
+        demo4(); // rule 4. validated
     }
 
 //    private static void demo1(){
@@ -36,17 +38,29 @@ public class Demo {
 //        subscriber.getSubscription().request(3);
 //    }
 
-    private static void demo3() throws InterruptedException {
+//    private static void demo3() throws InterruptedException {
+//        var publisher = new PublisherImpl();
+//        var subscriber = new SubscriberImpl();
+//        publisher.subscribe(subscriber);
+//        subscriber.getSubscription().request(3);
+//        Thread.sleep(2000);
+//        subscriber.getSubscription().cancel();
+//        subscriber.getSubscription().request(3);
+//        Thread.sleep(2000);
+//        subscriber.getSubscription().request(3);
+//        Thread.sleep(2000);
+//        subscriber.getSubscription().request(3);
+//    }
+
+    private static void demo4() throws InterruptedException {
         var publisher = new PublisherImpl();
         var subscriber = new SubscriberImpl();
         publisher.subscribe(subscriber);
         subscriber.getSubscription().request(3);
         Thread.sleep(2000);
-        subscriber.getSubscription().cancel();
-        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().request(11);
         Thread.sleep(2000);
         subscriber.getSubscription().request(3);
         Thread.sleep(2000);
-        subscriber.getSubscription().request(3);
     }
 }
