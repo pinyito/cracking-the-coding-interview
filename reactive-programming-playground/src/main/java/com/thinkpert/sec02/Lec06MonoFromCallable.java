@@ -6,25 +6,17 @@ import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
-/*
-    Mono from a supplier is a safe way to create a publisher.
-    The supplier will be executed only when a subscriber subscribes to the publisher.
- */
 
-public class Lec05MonoFromSupplier {
+public class Lec06MonoFromCallable {
 
     private static final Logger log = LoggerFactory.getLogger(Lec03MonoSubscribe.class);
 
     public static void main(String[] args) {
         var list = List.of(1, 2, 3);
-        // Obvious approach for Mono from a supplier
-//        Mono.just(sum(list));// breaking it up
-//                .subscribe(Util.subscriber()); // we see that Mono.just is executing, not safe for compute intensive calls
-        // Safe approach for Mono from a supplier :: creates a delayed publisher
-        Mono.fromSupplier(() -> sum(list))
+        Mono.fromCallable(() -> sum(list))
                 .subscribe(Util.subscriber());
-    }
 
+    }
     private static int sum(List<Integer> list){
         log.info("finding the sum of {}", list);
         return list.stream().mapToInt(i -> i).sum();
