@@ -11,21 +11,8 @@
     <groupId>com.thinkpert</groupId>
     <artifactId>webfluxplayground</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>webfluxplayground</name>
-    <description>webfluxplayground</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+    <name>webflux-playground</name>
+    <description>Demo project for Spring Boot WebFlux</description>
     <properties>
         <java.version>17</java.version>
     </properties>
